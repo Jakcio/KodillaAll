@@ -15,7 +15,7 @@ public class OrderProcessor {
     public OrderDto orderProcess(final OrderRequest orderRequest) {
         boolean isRented = productOrderService.order(orderRequest.getUser(), orderRequest.getItem(), orderRequest.getOrderTime());
         if(isRented) {
-            mailService.sendEmail(orderRequest.getUser());
+            mailService.inform(orderRequest.getUser());
             repository.create(orderRequest.getItem(), orderRequest.getUser(), orderRequest.getOrderTime());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
