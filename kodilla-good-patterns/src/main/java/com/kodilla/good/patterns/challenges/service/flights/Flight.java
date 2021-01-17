@@ -6,14 +6,10 @@ public class Flight {
 
     private final String departureAirport;
     private final String arrivalAirport;
-    private LocalTime departureTime;
-    private LocalTime arrivalTime;
 
-    public Flight(String departureAirport, String arrivalAirport, LocalTime departureTime, LocalTime arrivalTime) {
+    public Flight(String departureAirport, String arrivalAirport) {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
-        this.arrivalTime = arrivalTime;
-        this.departureTime = departureTime;
     }
 
     public String getDepartureAirport() {
@@ -22,6 +18,24 @@ public class Flight {
 
     public String getArrivalAirport() {
         return arrivalAirport;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Flight flight = (Flight) o;
+
+        if (!departureAirport.equals(flight.departureAirport)) return false;
+        return arrivalAirport.equals(flight.arrivalAirport);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = departureAirport.hashCode();
+        result = 31 * result + arrivalAirport.hashCode();
+        return result;
     }
 
     @Override
