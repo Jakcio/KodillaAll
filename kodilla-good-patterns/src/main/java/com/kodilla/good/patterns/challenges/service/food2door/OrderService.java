@@ -10,8 +10,7 @@ public class OrderService {
 
        Map<Product, Integer> cart = orderRequest.getCart() ;
 
-        for (Map.Entry<Product, Integer> entry: cart.entrySet()
-             ) {
+        for (Map.Entry<Product, Integer> entry: cart.entrySet()) {
             entry.getKey().getSupplier().process(entry.getKey().getName(), entry.getValue());
 
         }

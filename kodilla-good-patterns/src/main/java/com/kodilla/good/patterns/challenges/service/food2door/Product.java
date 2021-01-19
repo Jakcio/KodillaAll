@@ -6,13 +6,11 @@ public class Product {
 
     private String name;
     private BigDecimal price;
-    private String comments;
     private Supplier supplier;
 
-    public Product(String name, BigDecimal price, String comments, Supplier supplier) {
+    public Product(String name, BigDecimal price, Supplier supplier) {
         this.name = name;
         this.price = price;
-        this.comments = comments;
         this.supplier = supplier;
     }
 
@@ -24,10 +22,6 @@ public class Product {
         return price;
     }
 
-
-    public String getComments() {
-        return comments;
-    }
 
     public Supplier getSupplier() {
         return supplier;

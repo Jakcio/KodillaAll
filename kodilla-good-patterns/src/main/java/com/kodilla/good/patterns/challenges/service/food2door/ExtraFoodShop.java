@@ -13,6 +13,7 @@ public class ExtraFoodShop implements Supplier {
         stock.put("Chleb", 15);
         stock.put("Woda", 20);
         stock.put("Ser", 30);
+        stock.put("Bułki", 20);
     }
 
     @Override
@@ -21,7 +22,6 @@ public class ExtraFoodShop implements Supplier {
             Integer stockQuantity = stock.get(productName);
             if(stockQuantity >= quantity) {
                 System.out.println("Realizuje zamowienie produktu " + productName + " ilosci " + quantity + " A dostepnych jest: " + stockQuantity);
-
                 stock.put(productName, stockQuantity-quantity);
             } else {
                 System.out.println("Nie moge zamowic " + productName + " Poniewaz na stanie mam tylko: " + stockQuantity);

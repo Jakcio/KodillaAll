@@ -19,27 +19,4 @@ public class Consumer {
         this.mail = mail;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public int getHouseNumber() {
-        return houseNumber;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getMail() {
-        return mail;
-    }
 }
