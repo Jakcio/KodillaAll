@@ -1,24 +1,26 @@
 package com.kodilla.good.patterns.challenges.service.food2door;
 
+import java.util.Map;
+
 public class OrderRequest {
 
-    Supplier supplier;
-    Product product;
-    Consumer consumer;
+    private Map<Product, Integer> cart;
 
-    public OrderRequest(Supplier supplier, Product product, Consumer consumer) {
-        this.supplier = supplier;
-        this.product = product;
+    private Consumer consumer;
+
+    public OrderRequest(Map<Product, Integer> cart, Consumer consumer) {
+        this.cart = cart;
+        this.consumer = consumer;
     }
 
-    public Supplier getSupplier() {
-        return supplier;
+    public Map<Product, Integer> getCart() {
+        return cart;
     }
 
-    public Product getProduct() {
-        return product;
-    }
     public Consumer getConsumer() {
         return consumer;
     }
 }
+
+
+

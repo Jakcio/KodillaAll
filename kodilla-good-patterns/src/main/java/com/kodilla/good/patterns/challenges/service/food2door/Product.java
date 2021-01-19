@@ -1,32 +1,35 @@
 package com.kodilla.good.patterns.challenges.service.food2door;
 
+import java.math.BigDecimal;
+
 public class Product {
 
-    String name;
-    double price;
-    double quantity;
-    String comments;
+    private String name;
+    private BigDecimal price;
+    private String comments;
+    private Supplier supplier;
 
-    public Product(String name, double price, double quantity, String comments) {
+    public Product(String name, BigDecimal price, String comments, Supplier supplier) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
         this.comments = comments;
+        this.supplier = supplier;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public double getQuantity() {
-        return quantity;
-    }
 
     public String getComments() {
         return comments;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
     }
 }
